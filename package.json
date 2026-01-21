@@ -1,0 +1,18 @@
+{
+  "name": "@warren-bank/Android-BareJS-Frontend",
+  "private": true,
+  "license": "GPL-2.0",
+  "devDependencies": {
+    "@warren-bank/translate-android-strings": "^3.0.1"
+  },
+  "scripts": {
+    "download:bare:arm32":   "wget -nv --no-check-certificate -O \"android-studio-project/BareJS-Frontend/src/main/jniLibs/armeabi-v7a/libbare.so\" \"https://unpkg.com/bare-runtime-android-arm@latest/bin/bare\"",
+    "download:bare:arm64":   "wget -nv --no-check-certificate -O \"android-studio-project/BareJS-Frontend/src/main/jniLibs/arm64-v8a/libbare.so\"   \"https://unpkg.com/bare-runtime-android-arm64@latest/bin/bare\"",
+    "download:bare:intel32": "wget -nv --no-check-certificate -O \"android-studio-project/BareJS-Frontend/src/main/jniLibs/x86/libbare.so\"         \"https://unpkg.com/bare-runtime-android-ia32@latest/bin/bare\"",
+    "download:bare:intel64": "wget -nv --no-check-certificate -O \"android-studio-project/BareJS-Frontend/src/main/jniLibs/x86_64/libbare.so\"      \"https://unpkg.com/bare-runtime-android-x64@latest/bin/bare\"",
+    "download:bare":         "npm run \"download:bare:arm32\" && npm run \"download:bare:arm64\" && npm run \"download:bare:intel32\" && npm run \"download:bare:intel64\"",
+
+    "translate":       "translate-android-strings -s \"deepl\" -i \"en\" -f \"android-studio-project/BareJS-Frontend/src/main/res/values/strings.xml\" -d \"android-studio-project/BareJS-Frontend/src/withAllLanguageTranslations/res\" -m --nc --nw -b \"(?:Bare\\.js|exec|fork|stdout|JSON|CLI|CWD)\"",
+    "translate:debug": "npm run translate -- -o \"en\" --debug"
+  }
+}

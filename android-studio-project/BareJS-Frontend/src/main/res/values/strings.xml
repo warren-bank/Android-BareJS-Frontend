@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE resources [
+  <!ENTITY barejs "Bare.js">
+]>
+
+<resources>
+  <!-- ===== Application ===== -->
+
+  <string name="app_name">&barejs; Frontend</string>
+
+  <!-- ===== MainActivity ===== -->
+
+  <string name="activity_main_menu_add">Add &barejs; App</string>
+  <string name="activity_main_menu_export">Export Data</string>
+  <string name="activity_main_menu_import">Import Data</string>
+  <string name="activity_main_menu_delete">Delete Data</string>
+  <string name="activity_main_menu_exit">Exit</string>
+
+  <string name="app_folderpicker_json_export_filepath_title">@string/activity_main_menu_export</string>
+  <string name="app_folderpicker_json_export_filepath_description">Select directory to save file</string>
+  <string name="app_folderpicker_json_export_filepath_newfile_prompt">Select new file name for JSON data</string>
+  <string name="app_folderpicker_json_export_filepath_newfile_name">export</string>
+
+  <string name="app_folderpicker_json_import_filepath_title">@string/activity_main_menu_import</string>
+  <string name="app_folderpicker_json_import_filepath_description">Select file containing previously exported JSON data</string>
+
+  <string-array name="activity_main_tab_titles">
+    <item>exec in same process</item>
+    <item>fork to separate process</item>
+  </string-array>
+
+  <string name="warning_runtime_permissions_denied">Please allow mandatory permissions</string>
+  <string name="warning_delete">Delete all app settings?</string>
+
+  <!-- ===== AbstractTabFragment ===== -->
+
+  <string name="app_settings_label_cwd_dirpath">Path to Working Directory</string>
+  <string name="app_settings_label_title">Title</string>
+  <string name="app_settings_label_env_vars">Environment Variables</string>
+  <string name="app_settings_notes_env_vars">One per line.\nFormat: name=value</string>
+  <string name="app_settings_label_bare_options">&barejs; CLI options</string>
+  <string name="app_settings_label_js_filepath">Path to JS File</string>
+  <string name="app_settings_label_js_options">JS File CLI options</string>
+
+  <string name="app_context_menuitem_label_edit_settings">Edit Settings</string>
+  <string name="app_context_menuitem_label_run">Run</string>
+  <string name="app_context_menuitem_label_start">Start</string>
+  <string name="app_context_menuitem_label_stop">Stop</string>
+  <string name="app_context_menuitem_label_read_stdout">Read stdout</string>
+  <string name="app_context_menuitem_label_delete">Delete</string>
+
+  <string name="label_button_browse">BROWSE</string>
+  <string name="label_button_cancel">CANCEL</string>
+  <string name="label_button_save">SAVE</string>
+  <string name="label_button_update">UPDATE</string>
+
+  <string name="app_folderpicker_cwd_dirpath_title">Select CWD</string>
+  <string name="app_folderpicker_cwd_dirpath_description">&barejs; app\'s current working directory</string>
+
+  <string name="app_folderpicker_js_filepath_title">Select JS File</string>
+  <string name="app_folderpicker_js_filepath_description">&barejs; app\'s main entry point</string>
+
+  <string name="error_using_max_apps">Error: Cannot Exceed the Maximum Number of &barejs; Daemons</string>
+  <string name="error_missing_required_value">Error: Missing Required Value</string>
+
+  <!-- ===== ExecTabFragment ===== -->
+
+  <string name="activity_main_tabs_fragment_exec_menu_read_stdout">@string/app_context_menuitem_label_read_stdout</string>
+  <string name="activity_main_tabs_fragment_exec_menu_kill_app">Kill exec</string>
+  <string name="activity_main_tabs_fragment_exec_menu_kill_app_title">Kill: %s</string>
+
+  <string name="app_exec_complete">Finished execution of app: \"%s\"</string>
+
+  <string name="notification_process_busy">Cannot start \"%s\" until execution finishes for running app: \"%s\"</string>
+
+  <!-- ===== ForkTabFragment ===== -->
+
+  <string translatable="false" name="fork_service_package_prefix">com.github.warren_bank.barejs_frontend.services.fork.BareService_</string>
+  <string translatable="false" name="process_filter_prefix"      >com.github.warren_bank.barejs_frontend:process_</string>
+
+  <!-- ===== StandardOutputActivity ===== -->
+
+  <string name="activity_read_output_menu_toggle_search">Toggle Search Bar</string>
+
+  <string name="label_button_search">SEARCH</string>
+
+  <string translatable="false" name="color_search_results">#FF5733</string>
+
+  <string name="error_stdout_not_found">Error: File Containing stdout Not Found</string>
+  <string name="error_stdout_not_readable">Error: File Containing stdout Not Readable</string>
+  <string name="notification_no_search_results">No results for search query</string>
+  <string name="notification_end_search_results">End of results.\n\nSearch will continue from the beginning.</string>
+
+  <!-- ===== AbstractBareService ===== -->
+
+  <string name="notification_service_content_line1">&barejs; daemon:</string>
+  <string name="notification_service_content_line3">Click to stop service.</string>
+</resources>

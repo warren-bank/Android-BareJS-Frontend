@@ -1,0 +1,99 @@
+apply from: '../constants.gradle'
+apply plugin: 'com.android.application'
+
+android {
+  namespace project.ext.applicationId
+
+  compileSdkVersion project.ext.compileSdkVersion
+  buildToolsVersion project.ext.buildToolsVersion
+
+  compileOptions {
+    sourceCompatibility project.ext.javaVersion
+    targetCompatibility project.ext.javaVersion
+  }
+
+  defaultConfig {
+    minSdkVersion    project.ext.minSdkVersion
+    targetSdkVersion project.ext.targetSdkVersion
+
+    applicationId project.ext.applicationId
+    versionName   project.ext.releaseVersion
+    versionCode   project.ext.releaseVersionCode
+
+    archivesBaseName += "-$versionName"
+  }
+
+  flavorDimensions "languageResources"
+
+  productFlavors {
+    withAllLanguageTranslations {
+      dimension "languageResources"
+    }
+    english {
+      dimension "languageResources"
+    }
+  }
+
+  buildTypes {
+    release {
+      debuggable      false
+      jniDebuggable   false
+      minifyEnabled   true
+      shrinkResources true
+      proguardFiles = [
+        "proguard-rules.txt",
+        getDefaultProguardFile('proguard-android.txt')
+      ]
+    }
+    debug {
+      debuggable      true
+      jniDebuggable   true
+      minifyEnabled   false
+      shrinkResources false
+    }
+  }
+
+  buildFeatures {
+    aidl        true
+    buildConfig false
+  }
+
+  // Extract native libraries from the APK
+  packagingOptions.jniLibs.useLegacyPackaging true
+
+  splits {
+    abi {
+      enable true
+      reset()
+      include "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+      universalApk false
+    }
+  }
+
+  dependenciesInfo {
+    includeInApk    = false  // Disables dependency metadata when building APKs.
+    includeInBundle = false  // Disables dependency metadata when building Android App Bundles.
+  }
+
+  lintOptions {
+    disable 'MissingTranslation'
+    abortOnError true
+  }
+}
+
+dependencies {
+  implementation project(':folderpicker-library')
+  implementation project(':folderpicker-support-library')
+
+  compileOnly         'androidx.annotation:annotation:'           + project.ext.libSupportAnnotation           // ( 22 KB) https://mvnrepository.com/artifact/androidx.annotation/annotation?repo=google
+  annotationProcessor 'androidx.annotation:annotation:'           + project.ext.libSupportAnnotation
+
+  implementation 'androidx.appcompat:appcompat:'                  + project.ext.libSupportAppCompat            // (1.0 MB) https://mvnrepository.com/artifact/androidx.appcompat/appcompat?repo=google
+  implementation 'androidx.coordinatorlayout:coordinatorlayout:'  + project.ext.libSupportCoordinatorLayout    // ( 44 KB) https://mvnrepository.com/artifact/androidx.coordinatorlayout/coordinatorlayout?repo=google
+  implementation 'androidx.fragment:fragment:'                    + project.ext.libSupportFragment             // (221 KB) https://mvnrepository.com/artifact/androidx.fragment/fragment?repo=google
+  implementation 'androidx.recyclerview:recyclerview:'            + project.ext.libSupportRecyclerView         // (349 KB) https://mvnrepository.com/artifact/androidx.recyclerview/recyclerview?repo=google
+  implementation 'androidx.viewpager:viewpager:'                  + project.ext.libSupportViewPager            // ( 52 KB) https://mvnrepository.com/artifact/androidx.viewpager/viewpager?repo=google
+  implementation 'com.google.android.material:material:'          + project.ext.libSupportMaterial             // (566 KB) https://mvnrepository.com/artifact/com.google.android.material/material?repo=google
+
+  implementation 'com.google.code.gson:gson:'                     + project.ext.libGson                        // (235 KB) https://mvnrepository.com/artifact/com.google.code.gson/gson
+}

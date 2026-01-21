@@ -1,0 +1,23 @@
+https://github.com/holepunchto/bare/tree/v1.26.0/media
+https://github.com/holepunchto/bare/raw/v1.26.0/media/logo-light.svg
+https://github.com/holepunchto/bare/raw/v1.26.0/media/logo-dark.svg
+  bare @ 160x39
+
+https://github.com/holepunchto/pear-docs
+https://pears.com/wp-content/themes/pears-theme/assets/images/pear.svg
+  pear @ 127x182
+
+https://seeklogo.com/vector-logo/273749/node-js
+https://seeklogo.com/files/N/nodejs-vector-logo-5A813456C7-seeklogo.com.zip
+
+https://material.io/resources/icons/?icon=drag_handle&style=baselinea
+https://fonts.gstatic.com/s/i/materialiconsround/drag_handle/v11/black-android.zip
+  drag_handle, rounded, black, 24dp
+
+https://material.io/resources/icons/?icon=add_circle_outline&style=baseline
+https://fonts.gstatic.com/s/i/materialiconsround/add_circle_outline/v10/white-android.zip
+  add_circle_outline, rounded, white, 24dp
+
+https://material.io/resources/icons/?icon=search&style=baseline
+https://fonts.gstatic.com/s/i/materialicons/search/v11/white-android.zip
+  search, filled, white, 24dp

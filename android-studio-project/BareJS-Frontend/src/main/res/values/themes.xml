@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- assign default values to attributes required by all layouts -->
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorOnPrimary">@color/colorOnPrimary</item>
+    <item name="colorSecondary">@color/colorSecondary</item>
+    <item name="colorOnSecondary">@color/colorOnSecondary</item>
+  </style>
+
+  <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+  <!-- ===== Toolbar ===== -->
+
+  <style name="AppTheme.Toolbar" parent="ThemeOverlay.AppCompat.Dark">
+    <item name="android:background">@color/colorPrimary</item>
+    <item name="android:textColor">@color/colorOnPrimary</item>
+  </style>
+
+  <!-- ===== Toolbar Overflow Menu ===== -->
+
+  <style name="AppTheme.Toolbar.PopupOverlay">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:background">@color/popupBackground</item>
+    <item name="android:textColor">@color/popup_text</item>
+  </style>
+
+  <!-- ===== Folder/File Picker ===== -->
+
+  <style name="AppTheme.FolderPicker" parent="FolderPickerTheme.Activity">
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorOnPrimary">@color/colorOnPrimary</item>
+    <item name="colorSecondary">@color/colorSecondary</item>
+    <item name="colorOnSecondary">@color/colorOnSecondary</item>
+  </style>
+</resources>
